@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 import {
   Navbar,
-  NavbarBrand,
   Nav,
-  NavLink,
-  NavItem
-} from 'reactstrap';
+} from 'react-bootstrap';
 import './Nav.scss';
 
-const loggedInNav = <NavItem className="mr-4">
-  <NavLink href="/creator/dashboard/">Go to Dashboard</NavLink>
-</NavItem>
+const loggedInNav = <Nav.Item className="mr-4">
+  <Nav.Link href="/creator/dashboard/">Go to Dashboard</Nav.Link>
+</Nav.Item>
 
-const loggedOutNav = <NavItem className="mr-4">
-  <NavLink href="/signup">Sign Up / Login as a Creator</NavLink>
-</NavItem>
+const loggedOutNav = <Nav.Item className="mr-4">
+  <Nav.Link href="/signup">Sign Up / Login as a Creator</Nav.Link>
+</Nav.Item>
 
 function SiteNav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,7 +19,7 @@ function SiteNav() {
   return (
     <div className="Navbar">
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">LiveStack.video</NavbarBrand>
+        <Navbar.Brand href="/">LiveStack.video</Navbar.Brand>
         <Nav className="ml-auto" navbar>
           {isLoggedIn
             ? loggedInNav
