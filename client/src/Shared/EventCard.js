@@ -1,26 +1,34 @@
 import React from 'react';
-import moment from 'moment';
-import { Container, Row, Col } from 'react-bootstrap';
+// import moment from 'moment';
+import { Card, Container, Row, Col } from 'react-bootstrap';
 
 function EventCard({ event, page }) {
-  const { category, title, dateTime, photo_url, attendees, creatorName } = event;
+  console.log("in the event card", { event })
+  const { category, title, dateTime, photo_url, attendees, creatorName, ...rest } = event;
+
+  console.log({ photo_url })
 
   return (
-    <Row>
-      <Col sm={2}>
-        <img src={photo_url} style={{ height: "200px", width: "200px" }} />
-      </Col>
-      <Col sm={10}>
-        {category} | {moment(dateTime).fromNow()}
-        <br />
-        {
-          page === "event" ?
-            { title } :
-            { title } | { creatorName } | { attendees }
-        }
-      </Col>
-    </Row>
-  )
+    <Card>
+      <Container>
+        <Card.Body>
+          <Card.Text className=".d-flex justify-content-start">
+            <Row>
+              <Col sm={3}>
+                <img src={photo_url} style={{ height: "150px", width: "150px" }} />
+              </Col>
+              <Col sm={7}>
+                {category} | {dateTime}}<br />
+                {title}
+                {(page !== "event") && `| ${creatorName} | ${attendees} attendees`
+                }
+              </Col>
+            </Row>
+          </Card.Text>
+        </Card.Body>
+      </Container>
+    </Card>
+  );
 };
 
 export default EventCard;

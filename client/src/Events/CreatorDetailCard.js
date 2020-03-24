@@ -5,7 +5,7 @@ function CreatorDetailCard({ creator }) {
   const { name, bio, twitter, instagram, website, email, photo_url } = creator;
 
   return (
-    <Card >
+    <Card className="my-4">
       <Container>
         <Card.Body>
           <Row>

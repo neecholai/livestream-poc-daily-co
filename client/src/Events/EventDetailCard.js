@@ -3,7 +3,8 @@ import { Card, Row, Col, Button } from 'react-bootstrap';
 
 
 function EventDetailCard({ event, monthlyPrice }) {
-  const { title, dateTime, description, price } = event;
+
+  const { title, description, dateTime, price } = event;
 
   const registerForEvent = () => {
     console.log("PUT THIS IN PROP AND DEFINE IN HIGHER COMPONENT LATER");

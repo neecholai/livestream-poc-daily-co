@@ -14,8 +14,8 @@ const mockEvent = {
   creatorId: 1,
   creatorName: "Creator Name",
   category: "yoga",
-  dateTime: "date",
-  photo_url: "https://cdn5.vectorstock.com/i/1000x1000/14/99/yoga-girl-in-lotus-position-cartoon-vector-20661499.jpg",
+  dateTime: new Date(2020, 4, 1, 12, 0).toString(),
+  photo_url: "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
   attendees: 10
 }
 
@@ -29,8 +29,8 @@ const mockEvent2 = {
   category: "workout",
   creatorId: 1,
   creatorName: "Creator Name",
-  dateTime: new Date(2020, 4, 1, 12, 0),
-  photo_url: "https://cdn5.vectorstock.com/i/1000x1000/14/99/yoga-girl-in-lotus-position-cartoon-vector-20661499.jpg",
+  dateTime: new Date(2020, 4, 1, 12, 0).toString(),
+  photo_url: "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
   attendees: 2000
 }
 
@@ -58,7 +58,7 @@ function EventDetailPage() {
     <Container>
       <EventDetailCard event={mockEvent} monthlyPrice={mockCreater.monthlyPrice} />
       {<CreatorDetailCard creator={mockCreater} />}
-      {/* <EventList events={mockCreater.events} creatorName={mockCreater.name} /> */}
+      {<EventList events={mockCreater.events} creatorName={mockCreater.name} />}
     </Container>
   );
 
