@@ -1,0 +1,23 @@
+.Navbar {
+    border-bottom: 1px solid #F6E7DF;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.Navbar {
+    .navbar-brand, .nav-link {
+       color: #58595B;
+    }
+    .navbar-brand {
+        font-weight: bold;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
+    nav {
+        max-width: 775px;
+        margin: auto;
+    }
+}
+
+

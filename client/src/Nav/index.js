@@ -5,12 +5,12 @@ import {
 } from 'react-bootstrap';
 import './Nav.scss';
 
-const loggedInNav = <Nav.Item className="mr-4">
+const loggedInNav = <Nav.Item>
   <Nav.Link href="/creator/dashboard/">Go to Dashboard</Nav.Link>
 </Nav.Item>
 
-const loggedOutNav = <Nav.Item className="mr-4">
-  <Nav.Link href="/signup">Sign Up / Login as a Creator</Nav.Link>
+const loggedOutNav = <Nav.Item>
+  <Nav.Link href="/signup">Sign Up/Login as a Creator</Nav.Link>
 </Nav.Item>
 
 function SiteNav() {
@@ -18,9 +18,9 @@ function SiteNav() {
 
   return (
     <div className="Navbar">
-      <Navbar color="light" light expand="md">
-        <Navbar.Brand href="/">LiveStack.video</Navbar.Brand>
-        <Nav className="ml-auto" navbar>
+      <Navbar color="light" light expand="xl">
+        <Navbar.Brand className="logo" href="/">LiveStack</Navbar.Brand>
+        <Nav navbar >
           {isLoggedIn
             ? loggedInNav
             : loggedOutNav}
