@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import Routes from './Routes';
-import SiteNav from './Nav';
+import SiteNav from './SiteNav';
 
 function App() {
   return (

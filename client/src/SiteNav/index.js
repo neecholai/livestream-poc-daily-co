@@ -5,13 +5,9 @@ import {
 } from 'react-bootstrap';
 import './Nav.scss';
 
-const loggedInNav = <Nav.Item>
-  <Nav.Link href="/creator/dashboard/">Go to Dashboard</Nav.Link>
-</Nav.Item>
+const loggedInNav = <Nav.Link to="/creator/dashboard/">Go to Dashboard</Nav.Link>
 
-const loggedOutNav = <Nav.Item>
-  <Nav.Link href="/signup">Sign Up/Login as a Creator</Nav.Link>
-</Nav.Item>
+const loggedOutNav = <Nav.Link to="/signup">Sign Up/Login as a Creator</Nav.Link>
 
 function SiteNav() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -19,11 +15,10 @@ function SiteNav() {
   return (
     <div className="Navbar">
       <Navbar color="light" light expand="false">
-        <Navbar.Brand className="logo" href="/">LiveStack</Navbar.Brand>
+        <Navbar.Brand className="logo">
+          <Nav.Link to="/">LiveStack</Nav.Link></Navbar.Brand>
         <Nav navbar >
-          {isLoggedIn
-            ? loggedInNav
-            : loggedOutNav}
+          {isLoggedIn ? loggedInNav : loggedOutNav}
         </Nav>
       </Navbar>
     </div>
