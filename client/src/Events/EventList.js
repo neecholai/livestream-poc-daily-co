@@ -1,13 +1,11 @@
 import React from 'react';
 import EventCard from '../Shared/EventCard';
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 
 function EventList({ events, creatorName }) {
 
-  console.log({ events })
   return (
-    <Container>
       <Card className="my-4">
         <Card.Body>
           <Card.Title>
@@ -18,7 +16,6 @@ function EventList({ events, creatorName }) {
           }
         </Card.Body>
       </Card>
-    </Container>
   );
 };
 

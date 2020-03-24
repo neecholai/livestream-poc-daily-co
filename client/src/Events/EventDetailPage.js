@@ -14,7 +14,7 @@ const mockEvent = {
   creatorId: 1,
   creatorName: "Creator Name",
   category: "yoga",
-  dateTime: new Date(2020, 4, 1, 12, 0).toString(),
+  dateTime: new Date(2020, 4, 3, 12, 0).toString(),
   photo_url: "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
   attendees: 10
 }
@@ -29,7 +29,7 @@ const mockEvent2 = {
   category: "workout",
   creatorId: 1,
   creatorName: "Creator Name",
-  dateTime: new Date(2020, 4, 1, 12, 0).toString(),
+  dateTime: new Date(2020, 4, 5, 12, 0).toString(),
   photo_url: "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
   attendees: 2000
 }
