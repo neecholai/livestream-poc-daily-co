@@ -3,7 +3,7 @@ import {
   Navbar,
   Nav,
 } from 'react-bootstrap';
-import './Nav.scss';
+import './SiteNav.scss';
 
 const loggedInNav = <Nav.Link to="/creator/dashboard/">Go to Dashboard</Nav.Link>
 
@@ -16,7 +16,8 @@ function SiteNav() {
     <div className="Navbar">
       <Navbar color="light" light expand="false">
         <Navbar.Brand className="logo">
-          <Nav.Link to="/">LiveStack</Nav.Link></Navbar.Brand>
+          <Nav.Link to="/">LiveStack</Nav.Link>
+        </Navbar.Brand>
         <Nav navbar >
           {isLoggedIn ? loggedInNav : loggedOutNav}
         </Nav>
