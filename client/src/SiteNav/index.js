@@ -10,7 +10,7 @@ const loggedInNav = <Nav.Link to="/creator/dashboard/">Go to Dashboard</Nav.Link
 const loggedOutNav = <Nav.Link to="/signup">Sign Up/Login as a Creator</Nav.Link>
 
 function SiteNav() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className="Navbar">
