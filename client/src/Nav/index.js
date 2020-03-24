@@ -14,11 +14,11 @@ const loggedOutNav = <Nav.Item>
 </Nav.Item>
 
 function SiteNav() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
     <div className="Navbar">
-      <Navbar color="light" light expand="xl">
+      <Navbar color="light" light expand="false">
         <Navbar.Brand className="logo" href="/">LiveStack</Navbar.Brand>
         <Nav navbar >
           {isLoggedIn

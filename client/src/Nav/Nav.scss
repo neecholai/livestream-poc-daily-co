@@ -10,13 +10,15 @@
     }
     .navbar-brand {
         font-weight: bold;
+        font-size: 24px;
     }
     .nav-link {
         font-size: 14px;
     }
     nav {
-        max-width: 775px;
+        max-width: 785px;
         margin: auto;
+        padding: 10px 14px;
     }
 }
 
