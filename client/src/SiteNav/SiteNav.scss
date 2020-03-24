@@ -1,0 +1,21 @@
+.Navbar {
+    border-bottom: 1px solid #F6E7DF;
+
+    .navbar-brand, .nav-link {
+       color: #58595B;
+    }
+    .navbar-brand a{
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
+    nav {
+        max-width: 785px;
+        margin: auto;
+        padding: 10px 14px;
+    }
+}
+
+
