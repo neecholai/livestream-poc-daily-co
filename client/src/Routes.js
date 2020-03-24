@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './Home';
 import EventDetailPage from './EventDetailPage';
+import CreatorDetailPage from './CreatorDetailPage';
 
 function Routes() {
   return (
@@ -11,6 +12,9 @@ function Routes() {
       </Route>
       <Route exact path="/events/:id">
         <EventDetailPage />
+      </Route>
+      <Route exact path="/creator/:id">
+        <CreatorDetailPage />
       </Route>
       <Redirect to="/" />
     </Switch>
