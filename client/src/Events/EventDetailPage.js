@@ -8,8 +8,8 @@ import { Container } from 'react-bootstrap';
 
 const mockEvent = {
   id: 1,
-  title: "Event title",
-  description: "Really cool event",
+  title: "Really Awesome Event",
+  description: "Really cool event. This event will Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae.",
   price: 10,
   creatorId: 1,
   creatorName: "Creator Name",
@@ -23,8 +23,8 @@ const mockEvent = {
 
 const mockEvent2 = {
   id: 2,
-  title: "Event title2",
-  description: "Really cool event2",
+  title: "Another Cool Event",
+  description: "Really cool event2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae.",
   price: 10,
   category: "workout",
   creatorId: 1,
@@ -34,10 +34,12 @@ const mockEvent2 = {
   attendees: 2000
 }
 
+
+
 const mockCreater = {
   id: 1,
-  name: "Creator Name",
-  bio: "I am a really cool creator",
+  name: "Joe Smith",
+  bio: "I am a really cool creator. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae. Etiam faucibus nulla elit, at interdum turpis dictum a. Proin vestibulum, enim sed scelerisque rhoncus, lorem urna hendrerit erat, ut sodales nisi mi sed risus. Cras vehicula in odio.",
   monthlyPrice: 45,
   twitter: "creatorhandle",
   instagram: "creatorighandle",
