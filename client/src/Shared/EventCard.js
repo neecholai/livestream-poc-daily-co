@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
+import Media from "react-bootstrap/Media";
 import * as moment from "moment";
 
 function EventCard({ event, page }) {
@@ -9,40 +9,30 @@ function EventCard({ event, page }) {
     dateTime,
     photo_url,
     attendees,
-    creatorName,
-    ...rest
+    creatorName
   } = event;
 
   return (
-    <Card>
-      <Container>
-        <Card.Body>
-          <Row className=".d-flex justify-content-start">
-            <Col xs={12} sm={5} md={4} lg={3}>
-              <Card.Text>
-                <img
-                  src={photo_url}
-                  style={{ height: "150px", width: "150px" }}
-                  alt="default-event"
-                />
-              </Card.Text>
-            </Col>
-            <Col xs={12} sm={7} md={8} lg={9}>
-              <Card.Text>
-                {category} |{" "}
-                {moment()
-                  .startOf(dateTime)
-                  .fromNow()}
-              </Card.Text>
-              <Card.Text>
-                <b>{title}</b>
-              </Card.Text>
-              {page !== "event" && `| ${creatorName} | ${attendees} attending`}
-            </Col>
-          </Row>
-        </Card.Body>
-      </Container>
-    </Card>
+    <Media className="my-2" as="li">
+      <img
+        className="mx-1"
+        src={photo_url}
+        style={{ height: "64px", width: "64px", borderRadius: "4px" }}
+        alt="default-event"
+      />
+      <Media.Body className="d-flex flex-column justify-content-between">
+        <div>
+          {category} |{" "}
+          {`${moment()
+            .startOf(dateTime)
+            .fromNow()}`}
+        </div>
+        <div>
+          <b>{title}</b>
+          {page !== "event" && `| ${creatorName} | ${attendees} attending`}
+        </div>
+      </Media.Body>
+    </Media>
   );
 }
 
