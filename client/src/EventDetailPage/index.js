@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import EventDetailCard from './EventDetailCard';
-import CreatorDetailCard from './CreatorDetailCard';
+import CreatorDetailCard from '../Shared/CreatorDetailCard';
 import EventList from './EventList';
 import { Container } from 'react-bootstrap';
 
