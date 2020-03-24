@@ -25,12 +25,12 @@ function CreatorDetailCard({ creator }) {
               <Card.Text>{bio}</Card.Text>
               <Card.Text>
                 {twitter && (
-                  <a href={`www.twitter.com/${twitter}`} target="blank">
+                  <a href={`https://www.twitter.com/${twitter}`} target="blank">
                     <i className="fab fa-twitter fa-2x fa-fw"></i>
                   </a>
                 )}
                 {instagram && (
-                  <a href={`www.instagram.com/${instagram}`} target="blank">
+                  <a href={`https://www.instagram.com/${instagram}`} target="blank">
                     <i className="fab fa-instagram fa-2x fa-fw"></i>
                   </a>
                 )}
