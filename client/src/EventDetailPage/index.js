@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import EventDetailCard from './EventDetailCard';
 import CreatorDetailCard from '../Shared/CreatorDetailCard';
-import EventList from './EventList';
+import EventList from '../Shared/EventList';
 import { Container } from 'react-bootstrap';
 
 
@@ -36,7 +36,7 @@ const mockEvent2 = {
 
 
 
-const mockCreater = {
+const mockCreator = {
   id: 1,
   name: "Joe Smith",
   bio: "I am a really cool creator. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae. Etiam faucibus nulla elit, at interdum turpis dictum a. Proin vestibulum, enim sed scelerisque rhoncus, lorem urna hendrerit erat, ut sodales nisi mi sed risus. Cras vehicula in odio.",
@@ -58,9 +58,9 @@ function EventDetailPage() {
 
   return (
     <Container className='d-flex flex-column justify-content-center align-items-center'>
-      <EventDetailCard event={mockEvent} monthlyPrice={mockCreater.monthlyPrice} />
-      {<CreatorDetailCard creator={mockCreater} />}
-      {<EventList events={mockCreater.events} creatorName={mockCreater.name} />}
+      <EventDetailCard event={mockEvent} monthlyPrice={mockCreator.monthlyPrice} />
+      <CreatorDetailCard creator={mockCreator} />
+      <EventList events={mockCreator.events} creatorName={mockCreator.name} />
     </Container>
   );
 
