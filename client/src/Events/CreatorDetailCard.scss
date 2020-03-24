@@ -1,0 +1,13 @@
+/* Small devices (portrait phones, 576px and down) */
+.text-justify-xs {
+  text-align: center;
+  justify-content: center;
+}
+
+/* Larger devices (landsacpe phones and larger, 576px and up) */
+@media (min-width: 576px) {
+  .text-justify-xs {
+      text-align: left;
+      justify-content: start;
+  }
+}

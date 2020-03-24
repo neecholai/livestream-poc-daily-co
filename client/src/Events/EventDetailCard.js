@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Button, Jumbotron, Container } from "react-bootstrap";
 import * as moment from "moment";
+import './EventDetailCard.scss'
 
 function EventDetailCard({ event, monthlyPrice }) {
   const { title, description, dateTime, price } = event;
@@ -18,29 +19,30 @@ function EventDetailCard({ event, monthlyPrice }) {
       Register for this event | ${price}
     </Button>
   ) : (
-    <div>
-      <Button className="mx-1" variant="primary" onClick={purchaseMonthlyPass}>
+    <div style={{margin: "25px"}}>
+      <Button className="mx-1 mt-2" variant="primary" onClick={purchaseMonthlyPass}>
         Get a Monthly Pass | ${monthlyPrice}
       </Button>
-      <Button className="mx-1" variant="primary" onClick={registerForEvent}>
+      <Button className="mx-1 mt-2" variant="primary" onClick={registerForEvent}>
         Register for this event | ${price}
       </Button>
     </div>
   );
 
   return (
-    <Card className="text-center my-4">
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>
+    <Jumbotron className="text-center my-2 col-lg-8 container">
+      
+        <h4>{title}</h4>
+        <i><h6>
           {moment()
             .startOf(dateTime)
             .fromNow()}
-        </Card.Text>
-        <Card.Text>{description}</Card.Text>
+        </h6></i>
+        <p>{description}</p>
+        <p>
         {registrationButtons}
-      </Card.Body>
-    </Card>
+</p>
+    </Jumbotron>
   );
 }
 

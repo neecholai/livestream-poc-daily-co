@@ -8,8 +8,8 @@ import { Container } from 'react-bootstrap';
 
 const mockEvent = {
   id: 1,
-  title: "Really Awesome Event",
-  description: "Really cool event. This event will Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae.",
+  title: "Event title",
+  description: "Really cool event. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl.",
   price: 10,
   creatorId: 1,
   creatorName: "Creator Name",
@@ -57,7 +57,7 @@ function EventDetailPage() {
   const { id } = useParams();
 
   return (
-    <Container>
+    <Container className='d-flex flex-column justify-content-center align-items-center'>
       <EventDetailCard event={mockEvent} monthlyPrice={mockCreater.monthlyPrice} />
       {<CreatorDetailCard creator={mockCreater} />}
       {<EventList events={mockCreater.events} creatorName={mockCreater.name} />}
