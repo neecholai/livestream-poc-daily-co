@@ -4,6 +4,14 @@
   justify-content: center;
 }
 
+.fab, .fas, .website {
+  color: #333;
+}
+
+.website:hover  {
+  color: #333
+}
+
 /* Larger devices (landsacpe phones and larger, 576px and up) */
 @media (min-width: 576px) {
   .text-justify-xs {
@@ -11,3 +19,9 @@
       justify-content: start;
   }
 }
+
+.CreatorDetailCard-image {
+  height: 125px;
+  width: 125px;
+}
+

@@ -1,9 +1,11 @@
 import React from "react";
 import Media from "react-bootstrap/Media";
 import * as moment from "moment";
+import './EventCard.scss';
 
 function EventCard({ event, page }) {
   const {
+    id,
     category,
     title,
     dateTime,
@@ -15,12 +17,11 @@ function EventCard({ event, page }) {
   return (
     <Media className="my-2" as="li">
       <img
-        className="mx-1"
+        className="mx-1 EventCard-photo"
         src={photo_url}
-        style={{ height: "64px", width: "64px", borderRadius: "4px" }}
-        alt="default-event"
+        alt={`event-${title}`}
       />
-      <Media.Body className="d-flex flex-column justify-content-between">
+      <Media.Body className="d-flex flex-column justify-content-between text-muted event-information">
         <div>
           {category} |{" "}
           {`${moment()
@@ -28,11 +29,11 @@ function EventCard({ event, page }) {
             .fromNow()}`}
         </div>
         <div>
-          <b>{title}</b>
-          {page !== "event" && `| ${creatorName} | ${attendees} attending`}
+          <a className="event-title" href={`/events/${id}`}>{title}</a>
+          {page !== "event" && <span className="text-muted"> | {creatorName} | {attendees} attending </span>}
         </div>
       </Media.Body>
-    </Media>
+    </Media >
   );
 }
 

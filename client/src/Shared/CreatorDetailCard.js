@@ -16,9 +16,9 @@ function CreatorDetailCard({ creator }) {
             <Col xs={12} sm={4} md={3} className="my-2 text-justify-xs">
               <Card.Text>
                 <img
+                  className="CreatorDetailCard-image"
                   src={photo_url}
-                  style={{ height: "125px", width: "125px" }}
-                  alt="default-user"
+                  alt={`profile photo for ${name}`}
                 />
               </Card.Text>
             </Col>
@@ -30,12 +30,12 @@ function CreatorDetailCard({ creator }) {
               <Card.Text>{bio}</Card.Text>
               <Card.Text>
                 {twitter && (
-                  <a href={`www.twitter.com/${twitter}`} target="blank">
+                  <a href={`http://www.twitter.com/${twitter}`} target="blank">
                     <i className="fab fa-twitter fa-lg fa-fw"></i>
                   </a>
                 )}
                 {instagram && (
-                  <a href={`www.instagram.com/${instagram}`} target="blank">
+                  <a href={`http://www.instagram.com/${instagram}`} target="blank">
                     <i className="fab fa-instagram fa-lg fa-fw"></i>
                   </a>
                 )}
@@ -44,7 +44,7 @@ function CreatorDetailCard({ creator }) {
                     <i className="fas fa-envelope fa-lg fa-fw"></i>
                   </a>
                 )}
-                {website && <a href={website}> {website}</a>}
+                {website && <a href={website} className="website"> {website}</a>}
               </Card.Text>
             </Col>
           </Row>
