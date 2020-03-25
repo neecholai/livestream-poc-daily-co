@@ -1,0 +1,44 @@
+.CreatorDetailCard {
+
+   .website {
+    color: #333;
+    &:hover {
+      color: #333
+    }
+  }
+
+  .fa-envelope {
+    color: #D5493C;
+  }
+
+  .fa-instagram {
+    color: #DB4865;
+  }
+  
+  .fa-twitter{
+    color: rgba(29,161,242,1.00);
+  }
+
+  .image {
+    border-radius: 4px;  
+    margin: 5px;
+    margin-right: 15px;
+    width: 125px;
+    height: 125px;
+  }
+
+  /* Small devices (portrait phones, 576px and down) */
+  .text-justify-xs {
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Larger devices (landsacpe phones and larger, 576px and up) */
+  @media (min-width: 576px) {
+    .text-justify-xs {
+        text-align: left;
+        justify-content: start;
+    }
+  }
+
+}

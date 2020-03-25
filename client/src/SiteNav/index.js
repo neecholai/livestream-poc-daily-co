@@ -14,7 +14,7 @@ function SiteNav() {
 
   return (
     <div className="Navbar">
-      <Navbar color="light" light expand="false">
+      <Navbar color="light" light="true" expand="false">
         <Navbar.Brand className="logo">
           <Nav.Link to="/">LiveStack</Nav.Link>
         </Navbar.Brand>
