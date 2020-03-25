@@ -15,9 +15,9 @@ function EventCard({ event, page }) {
   } = event;
 
   return (
-    <Media className="my-2" as="li">
+    <Media className="EventCard my-2" as="li">
       <img
-        style={{width: "64px", height: "64px"}}
+        style={{ width: "64px", height: "64px" }}
         className="mx-1 EventCard-image"
         src={photo_url}
         alt={`event-${title}`}

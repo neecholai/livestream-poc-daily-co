@@ -7,11 +7,11 @@ function EventDetailCard({ event, monthlyPrice }) {
   const { title, description, dateTime, price } = event;
 
   const registerForEvent = () => {
-    console.log("PUT THIS IN PROP AND DEFINE IN HIGHER COMPONENT LATER");
+    console.log("DIRECT USER TO PAGE TO EITHER STRIPE OR SIGN IN SO THEY CAN PAY, SEND IN EVENT DETAILS TO THIS PAGE");
   };
 
   const purchaseMonthlyPass = () => {
-    console.log("PUT THIS IN PROP AND DEFINE IN HIGHER COMPONENT LATER");
+    console.log("PUT THIS IN PROP AND DEFINE IN HIGHER COMPONENT LATER, ALSO ON CREATOR DETAIL PAGE");
   };
 
   const registrationButtons = !monthlyPrice ? (
@@ -19,26 +19,26 @@ function EventDetailCard({ event, monthlyPrice }) {
       Register for this event | ${price}
     </Button>
   ) : (
-    <div className='buttons'>
-      <Button
-        className="mx-1 mt-2"
-        variant="primary"
-        onClick={purchaseMonthlyPass}
-      >
-        Get a Monthly Pass | ${monthlyPrice}
-      </Button>
-      <Button
-        className="mx-1 mt-2"
-        variant="primary"
-        onClick={registerForEvent}
-      >
-        Register for this event | ${price}
-      </Button>
-    </div>
-  );
+      <div className='buttons'>
+        <Button
+          className="mx-1 mt-2"
+          variant="primary"
+          onClick={purchaseMonthlyPass}
+        >
+          Get a Monthly Pass | ${monthlyPrice}
+        </Button>
+        <Button
+          className="mx-1 mt-2"
+          variant="primary"
+          onClick={registerForEvent}
+        >
+          Register for this event | ${price}
+        </Button>
+      </div>
+    );
 
   return (
-    <Jumbotron className="text-center my-2 col-lg-8 container">
+    <Jumbotron className="text-center col-lg-8 EventDetailCard" >
       <h4>{title}</h4>
       <i>
         <h6>

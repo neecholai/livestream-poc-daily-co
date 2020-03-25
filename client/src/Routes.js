@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './Home';
-import EventDetailPage from './EventDetailPage';
+import EventDetail from './EventDetail';
 
 function Routes() {
   return (
@@ -10,7 +10,7 @@ function Routes() {
         <Home />
       </Route>
       <Route exact path="/events/:id">
-        <EventDetailPage />
+        <EventDetail />
       </Route>
       <Redirect to="/" />
     </Switch>
