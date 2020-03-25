@@ -18,7 +18,7 @@ function EventCard({ event, page }) {
     <Media className="EventCard my-2" as="li">
       <img
         style={{ width: "64px", height: "64px" }}
-        className="mx-1 EventCard-image"
+        className="mx-1 image"
         src={photo_url}
         alt={`event-${title}`}
       />
@@ -30,7 +30,7 @@ function EventCard({ event, page }) {
             .fromNow()}`}
         </div>
         <div>
-          <a className="EventCard-title" href={`/events/${id}`}>{title}</a>
+          <a className="title" href={`/events/${id}`}>{title}</a>
           {page !== "event" && <span className="text-muted"> | {creatorName} | {attendees} attending </span>}
         </div>
       </Media.Body>

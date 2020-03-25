@@ -11,7 +11,7 @@ function CreatorDetailCard({ creator }) {
       <Media>
         <div>
           <img
-            className="CreatorDetailCard-image"
+            className="image"
             src={photo_url}
             alt={`profile pic for ${name}`}
           />
@@ -22,20 +22,20 @@ function CreatorDetailCard({ creator }) {
             <p>
               {social.twitter && (
                 <a href={`http://www.twitter.com/${social.twitter}`} target="blank">
-                  <i className="fab fa-twitter fa-lg fa-fw CreatorDetailCard-icon"></i>
+                  <i className="fab fa-twitter fa-lg fa-fw"></i>
                 </a>
               )}
               {social.instagram && (
                 <a href={`http://www.instagram.com/${social.instagram}`} target="blank">
-                  <i className="fab fa-instagram fa-lg fa-fw CreatorDetailCard-icon"></i>
+                  <i className="fab fa-instagram fa-lg fa-fw"></i>
                 </a>
               )}
               {email && (
                 <a href={`mailto:${email}`}>
-                  <i className="far fa-envelope fa-lg fa-fw CreatorDetailCard-icon"></i>
+                  <i className="far fa-envelope fa-lg fa-fw"></i>
                 </a>
               )}
-              {social.website && <a href={website} className="CreatorDetailCard-website"> {social.website}</a>}
+              {social.website && <a href={website} className="website"> {social.website}</a>}
             </p>
           </div>
         </Media.Body>
