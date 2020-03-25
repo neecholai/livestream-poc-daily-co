@@ -16,9 +16,9 @@ function CreatorDetailCard({ creator }) {
             <Col xs={12} sm={4} md={3} className="my-2 text-justify-xs">
               <Card.Text>
                 <img
-                  className="CreatorDetailCard-image"
+                  style={{width: "125px", height: "125px"}}
                   src={photo_url}
-                  alt={`profile photo for ${name}`}
+                  alt={`profile pic for ${name}`}
                 />
               </Card.Text>
             </Col>

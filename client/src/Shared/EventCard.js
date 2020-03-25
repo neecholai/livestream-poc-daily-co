@@ -17,11 +17,12 @@ function EventCard({ event, page }) {
   return (
     <Media className="my-2" as="li">
       <img
-        className="mx-1 EventCard-photo"
+        style={{width: "64px", height: "64px"}}
+        className="mx-1 EventCard-image"
         src={photo_url}
         alt={`event-${title}`}
       />
-      <Media.Body className="d-flex flex-column justify-content-between text-muted event-information">
+      <Media.Body className="d-flex flex-column justify-content-between ml-1 text-muted">
         <div>
           {category} |{" "}
           {`${moment()
@@ -29,7 +30,7 @@ function EventCard({ event, page }) {
             .fromNow()}`}
         </div>
         <div>
-          <a className="event-title" href={`/events/${id}`}>{title}</a>
+          <a className="EventCard-title" href={`/events/${id}`}>{title}</a>
           {page !== "event" && <span className="text-muted"> | {creatorName} | {attendees} attending </span>}
         </div>
       </Media.Body>

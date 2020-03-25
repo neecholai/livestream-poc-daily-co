@@ -19,8 +19,6 @@ const mockEvent = {
   attendees: 10
 }
 
-// new Date(2020, 4, 1, 12, 0),
-
 const mockEvent2 = {
   id: 2,
   title: "Another Cool Event",

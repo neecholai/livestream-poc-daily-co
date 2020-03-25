@@ -19,7 +19,7 @@ function EventDetailCard({ event, monthlyPrice }) {
       Register for this event | ${price}
     </Button>
   ) : (
-    <div style={{ margin: "25px" }}>
+    <div className='buttons'>
       <Button
         className="mx-1 mt-2"
         variant="primary"
@@ -47,8 +47,8 @@ function EventDetailCard({ event, monthlyPrice }) {
             .fromNow()}
         </h6>
       </i>
-      <p>{description}</p>
-      <p>{registrationButtons}</p>
+      <div>{description}</div>
+      <div>{registrationButtons}</div>
     </Jumbotron>
   );
 }
