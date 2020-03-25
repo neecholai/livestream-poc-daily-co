@@ -1,6 +1,6 @@
 import React from "react";
 import Media from "react-bootstrap/Media";
-import * as moment from "moment";
+import moment from "moment";
 import './EventCard.scss';
 
 function EventCard({ event, page }) {
