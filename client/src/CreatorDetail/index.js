@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CreatorDetailCard from '../Shared/CreatorDetailCard';
 import EventList from '../Shared/EventList';
-import { Container } from 'react-bootstrap';
+import { Container, Jumbotron } from 'react-bootstrap';
 import CreatorSignUp from './CreatorSignUp';
-
+import './CreatorDetail.scss';
 
 const mockEvent = {
   id: 1,
@@ -41,9 +41,11 @@ const mockCreator = {
   name: "Joe Smith",
   bio: "I am a really cool creator. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae. Etiam faucibus nulla elit, at interdum turpis dictum a. Proin vestibulum, enim sed scelerisque rhoncus, lorem urna hendrerit erat, ut sodales nisi mi sed risus. Cras vehicula in odio.",
   monthlyPrice: 45,
-  twitter: "creatorhandle",
-  instagram: "creatorighandle",
-  website: "www.creator.com",
+  social: {
+    twitter: "creatorhandle",
+    instagram: "creatorighandle",
+    website: "www.creator.com",
+  },
   email: "email@email.com",
   photo_url: "https://i2.wp.com/www.msahq.org/wp-content/uploads/2016/12/default-avatar.png?ssl=1",
   events: [
@@ -52,18 +54,27 @@ const mockCreator = {
   ]
 }
 
-function CreatorDetailPage() {
-  // NOTE: Implement params ID once we have routes and data.
+function CreatorDetail() {
+  const [creator, setCreator] = useState(null);
+
   const { id } = useParams();
 
+  useEffect(() => {
+    const creator = mockCreator;
+    setCreator(creator);
+  }, [id]);
+
   return (
-    <Container className='d-flex flex-column justify-content-center align-items-center'>
+    <Container className='CreatorDetail'>
+      <Jumbotron className="col-lg-8 header">
+        <h1>{mockCreator.name}</h1>
+        <CreatorSignUp creator={mockCreator} />
+      </Jumbotron>
       <CreatorDetailCard creator={mockCreator} />
-      <CreatorSignUp creator={mockCreator} />
-      <EventList events={mockCreator.events} creatorName={mockCreator.name} />
+      <EventList events={mockCreator.events} creatorName={mockCreator.name} page="Creator" />
     </Container>
   );
 
 };
 
-export default CreatorDetailPage;
+export default CreatorDetail;

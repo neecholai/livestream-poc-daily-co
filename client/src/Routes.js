@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './Home';
 import EventDetail from './EventDetail';
-import CreatorDetailPage from './CreatorDetailPage';
+import CreatorDetail from './CreatorDetail';
 
 function Routes() {
   return (
@@ -14,7 +14,7 @@ function Routes() {
         <EventDetail />
       </Route>
       <Route exact path="/creator/:id">
-        <CreatorDetailPage />
+        <CreatorDetail />
       </Route>
       <Redirect to="/" />
     </Switch>

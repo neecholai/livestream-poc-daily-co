@@ -12,12 +12,11 @@ function CreatorSignUp({ creator }) {
   }
 
   return (
-    <Card className="text-center my-2 col-lg-8 container">
+    <div className="text-center my-2 col-lg-8 container">
       <Button variant="primary" onClick={purchaseMonthlyPass}>
         Get a monthly pass for {name} | ${monthlyPrice}
       </Button>
-
-    </Card>
+    </div>
   );
 }
 
