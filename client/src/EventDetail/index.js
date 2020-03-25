@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import EventDetailCard from './EventDetailCard';
 import CreatorDetailCard from '../Shared/CreatorDetailCard';
@@ -19,8 +19,6 @@ const mockEvent = {
   attendees: 10
 }
 
-// new Date(2020, 4, 1, 12, 0),
-
 const mockEvent2 = {
   id: 2,
   title: "Another Cool Event",
@@ -32,38 +30,55 @@ const mockEvent2 = {
   dateTime: new Date(2020, 4, 5, 12, 0).toString(),
   photo_url: "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
   attendees: 2000
-}
+};
 
-
-
-const mockCreater = {
+const mockCreator = {
   id: 1,
   name: "Joe Smith",
   bio: "I am a really cool creator. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu convallis nisl. Vivamus sollicitudin dui ante, id sagittis nibh scelerisque vitae. Etiam faucibus nulla elit, at interdum turpis dictum a. Proin vestibulum, enim sed scelerisque rhoncus, lorem urna hendrerit erat, ut sodales nisi mi sed risus. Cras vehicula in odio.",
   monthlyPrice: 45,
-  twitter: "creatorhandle",
-  instagram: "creatorighandle",
-  website: "www.creator.com",
+  social: {
+    twitter: "creatorhandle",
+    instagram: "creatorighandle",
+    website: "www.creator.com",
+  },
   email: "email@email.com",
   photo_url: "https://i2.wp.com/www.msahq.org/wp-content/uploads/2016/12/default-avatar.png?ssl=1",
   events: [
     mockEvent,
     mockEvent2
   ]
-}
-
-function EventDetailPage() {
-  // NOTE: Implement params ID once we have routes and data.
-  const { id } = useParams();
-
-  return (
-    <Container className='d-flex flex-column justify-content-center align-items-center'>
-      <EventDetailCard event={mockEvent} monthlyPrice={mockCreater.monthlyPrice} />
-      {<CreatorDetailCard creator={mockCreater} />}
-      {<EventList events={mockCreater.events} creatorName={mockCreater.name} />}
-    </Container>
-  );
-
 };
 
-export default EventDetailPage;
+function EventDetail() {
+  const [event, setEvent] = useState(null);
+  const [creator, setCreator] = useState(null);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    const event = mockEvent;
+    const creator = mockCreator;
+    setEvent(event);
+    setCreator(creator);
+  }, [id]);
+
+  return (
+    <>
+      {
+        event && creator ?
+          <Container className='d-flex flex-column justify-content-center align-items-center'>
+            <EventDetailCard event={event} monthlyPrice={creator.monthlyPrice} />
+            <hr />
+            <CreatorDetailCard creator={creator} />
+            <hr />
+            <EventList events={creator.events} creatorName={creator.name} />
+          </Container>
+          :
+          "Loading..."
+      }
+    </>
+  );
+};
+
+export default EventDetail;
