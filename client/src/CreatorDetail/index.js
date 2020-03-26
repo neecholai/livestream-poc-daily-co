@@ -65,7 +65,7 @@ function CreatorDetail() {
   return (
     <Container className='CreatorDetail' >
       {creator.name ?
-        (<><Jumbotron className="col-lg-8 header" >
+        (<><Jumbotron className="col-lg-8 text-center p-3 header" >
           <h1>{creator.name}</h1>
           <CreatorSignUp creator={creator} />
         </Jumbotron >
