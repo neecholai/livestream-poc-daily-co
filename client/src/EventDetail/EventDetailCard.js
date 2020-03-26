@@ -41,11 +41,7 @@ function EventDetailCard({ event, monthlyPrice }) {
     <Jumbotron className="text-center col-lg-8 EventDetailCard" >
       <h4>{title}</h4>
       <i>
-        <h6>
-          {moment()
-            .startOf(dateTime)
-            .fromNow()}
-        </h6>
+        <h6> {moment().startOf(dateTime).fromNow()} </h6>
       </i>
       <div>{description}</div>
       <div>{registrationButtons}</div>
