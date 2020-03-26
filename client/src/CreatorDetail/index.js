@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CreatorDetailCard from '../Shared/CreatorDetailCard';
 import EventList from '../Shared/EventList';
@@ -18,8 +18,6 @@ const mockEvent = {
   photo_url: "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
   attendees: 10
 }
-
-// new Date(2020, 4, 1, 12, 0),
 
 const mockEvent2 = {
   id: 2,
@@ -55,7 +53,7 @@ const mockCreator = {
 }
 
 function CreatorDetail() {
-  const [creator, setCreator] = useState(null);
+  const [creator, setCreator] = useState({});
 
   const { id } = useParams();
 
@@ -65,16 +63,19 @@ function CreatorDetail() {
   }, [id]);
 
   return (
-    <Container className='CreatorDetail'>
-      <Jumbotron className="col-lg-8 header">
-        <h1>{mockCreator.name}</h1>
-        <CreatorSignUp creator={mockCreator} />
-      </Jumbotron>
-      <CreatorDetailCard creator={mockCreator} />
-      <EventList events={mockCreator.events} creatorName={mockCreator.name} page="Creator" />
-    </Container>
+    <Container className='CreatorDetail' >
+      {creator.name ?
+        (<><Jumbotron className="col-lg-8 header" >
+          <h1>{creator.name}</h1>
+          <CreatorSignUp creator={creator} />
+        </Jumbotron >
+          <CreatorDetailCard creator={creator} />
+          <EventList events={creator.events} creatorName={creator.name} page="Creator" /></>)
+        :
+        "Loading..."
+      }
+    </Container >
   );
-
 };
 
 export default CreatorDetail;
